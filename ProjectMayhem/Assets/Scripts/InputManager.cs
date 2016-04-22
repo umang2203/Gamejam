@@ -27,28 +27,71 @@ public class InputManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 	{
 		Debug.Log ("End Drag");
 		finalPosition = eventData.position;
-		float angle = Vector2.Angle (initialPosition,finalPosition);
-		Vector3 cross = Vector3.Cross (initialPosition, finalPosition);
-		if (cross.z > 0)
-			angle = 360 - angle;
-		Debug.Log ("Angle: "+ angle);
 
-		if (finalPosition.x > initialPosition.x)
+		Vector2 direction = finalPosition - initialPosition;
+		Vector2 swipeType = Vector2.zero;
+
+		if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
 		{
-			Debug.Log ("Right");
+			// the swipe is horizontal:
+			swipeType = Vector2.right * Mathf.Sign(direction.x);
 		}
 		else
 		{
-			Debug.Log ("Left");
+			// the swipe is vertical:
+			swipeType = Vector2.up * Mathf.Sign(direction.y);
 		}
 
-		if (finalPosition.y > initialPosition.y)
+		if(swipeType.x != 0.0f)
 		{
-			Debug.Log ("Up");
+			if(swipeType.x > 0.0f)
+			{
+				// MOVE RIGHT
+				Debug.Log ("Right");
+			}
+			else
+			{
+				// MOVE LEFT
+				Debug.Log ("Left");
+			}
 		}
-		else
+
+		if(swipeType.y != 0.0f )
 		{
-			Debug.Log ("Down");
+			if(swipeType.y > 0.0f)
+			{
+				// MOVE UP
+				Debug.Log ("Up");
+			}
+			else
+			{
+				// MOVE DOWN
+				Debug.Log ("Down");
+			}
 		}
+
+//		float angle = Vector2.Angle (initialPosition,finalPosition);
+//		Vector3 cross = Vector3.Cross (initialPosition, finalPosition);
+//		if (cross.z > 0)
+//			angle = 360 - angle;
+//		Debug.Log ("Angle: "+ angle);
+//
+//		if (finalPosition.x > initialPosition.x)
+//		{
+//			Debug.Log ("Right");
+//		}
+//		else
+//		{
+//			Debug.Log ("Left");
+//		}
+//
+//		if (finalPosition.y > initialPosition.y)
+//		{
+//			Debug.Log ("Up");
+//		}
+//		else
+//		{
+//			Debug.Log ("Down");
+//		}
 	}
 }
