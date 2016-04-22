@@ -18,6 +18,8 @@ public class Runner : MonoBehaviour {
     public float        runningSpeed = 1f;
     public float        jumpDistance = 1f;
     private Vector3     _direction;
+
+    public GameObject camera;
 	
 	void Start () 
     {
@@ -30,7 +32,10 @@ public class Runner : MonoBehaviour {
     void Update()
     {
         if(_state == RunnerState.Running || _state == RunnerState.Jumping)
+        {
             transform.Translate(_direction * runningSpeed);
+//            camera.transform.Translate(_direction * runningSpeed);
+        }
     }
 
     public void Jump()
@@ -57,11 +62,11 @@ public class Runner : MonoBehaviour {
     {
         Debug.Log("Jumping");
         _state = RunnerState.Jumping;
-        _direction = new Vector3(1f, jumpDistance, 0f);
+        _direction = new Vector3(2f, jumpDistance, 0f);
     }
     public void OnJump_Halfway()
     {
-        _direction = new Vector3(1f, -jumpDistance, 0f);
+        _direction = new Vector3(2f, -jumpDistance, 0f);
     }
     public void OnRun_Started()
     {
@@ -71,6 +76,7 @@ public class Runner : MonoBehaviour {
             _state = RunnerState.Running;
             _direction = new Vector3(1f,0f,0f);
             transform.localPosition = new Vector3(transform.localPosition.x, 0f, 0f);
+//            camera.transform.localPosition = new Vector3(camera.transform.localPosition.x, 0f, -10f);
         }
     }
     public void OnDieing_Started()
