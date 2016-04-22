@@ -2,14 +2,34 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
+using UnityEngine.UI;
+public enum SwipeDirection
+{
+	SwipeUp,
+	SwipeDown,
+	SwipeLeft,
+	SwipeRight
+};
+
 public class InputManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
+
+
 
 	Vector2 initialPosition;
 	Vector2 finalPosition;
+	private GameObject _object;
+
+	public delegate void Swipe(SwipeDirection swipeDirection); 
+	public static event Swipe OnSwipe;
+
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{	
+		//SwipeDirection swipeDirection;
+		_object = GameObject.Find ("Image");
+
+
 	}
 	
 	// Update is called once per frame
@@ -17,10 +37,14 @@ public class InputManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 	
 	}
 
+
+
 	public void OnBeginDrag (PointerEventData eventData)
 	{
 		Debug.Log ("Begin Drag");
 		initialPosition = eventData.position;
+
+
 	}
 
 	public void OnEndDrag (PointerEventData eventData)
@@ -35,6 +59,7 @@ public class InputManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 		{
 			// the swipe is horizontal:
 			swipeType = Vector2.right * Mathf.Sign(direction.x);
+
 		}
 		else
 		{
@@ -47,12 +72,14 @@ public class InputManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 			if(swipeType.x > 0.0f)
 			{
 				// MOVE RIGHT
-				Debug.Log ("Right");
+				OnSwipe(SwipeDirection.SwipeRight);
+				//Debug.Log ("Right");
 			}
 			else
 			{
 				// MOVE LEFT
-				Debug.Log ("Left");
+				OnSwipe(SwipeDirection.SwipeLeft);
+				//Debug.Log ("Left");
 			}
 		}
 
@@ -61,37 +88,16 @@ public class InputManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 			if(swipeType.y > 0.0f)
 			{
 				// MOVE UP
-				Debug.Log ("Up");
+				OnSwipe(SwipeDirection.SwipeUp);
+				//Debug.Log ("Up");
 			}
 			else
 			{
 				// MOVE DOWN
-				Debug.Log ("Down");
+				OnSwipe(SwipeDirection.SwipeDown);
+				//Debug.Log ("Down");
 			}
-		}
 
-//		float angle = Vector2.Angle (initialPosition,finalPosition);
-//		Vector3 cross = Vector3.Cross (initialPosition, finalPosition);
-//		if (cross.z > 0)
-//			angle = 360 - angle;
-//		Debug.Log ("Angle: "+ angle);
-//
-//		if (finalPosition.x > initialPosition.x)
-//		{
-//			Debug.Log ("Right");
-//		}
-//		else
-//		{
-//			Debug.Log ("Left");
-//		}
-//
-//		if (finalPosition.y > initialPosition.y)
-//		{
-//			Debug.Log ("Up");
-//		}
-//		else
-//		{
-//			Debug.Log ("Down");
-//		}
+		}
 	}
 }
