@@ -1,17 +1,42 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.EventSystems;
 public class LampPost : MonoBehaviour {
 
     public bool IsActive;
-    public Sprite LightSprite;
+    public GameObject LightSprite;
 	// Use this for initialization
-	void Start () {
-	
+
+    void Awake()
+    {
+        LightSprite = this.transform.GetChild(0).gameObject;
+    }
+	void Start () 
+    {
+        
+        LightSprite.SetActive(true);
 	}
+
+
 	
 	// Update is called once per frame
-	void Update () {
 	
+    void Update () 
+    {
+
+        float _screenWidth = Camera.main.orthographicSize * Screen.width / Screen.height;
+        if(transform.position.x < Camera.main.gameObject.transform.position.x - _screenWidth)
+            GameObject.Destroy(this.gameObject);
+	
+        SpriteRenderer rendrer = new SpriteRenderer();
+
 	}
+
+    void OnMouseDown()
+    {
+        Debug.Log("Meh");
+        
+    }
+
+   
 }

@@ -53,49 +53,50 @@ public class InputManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
 		Vector2 direction = finalPosition - initialPosition;
 		Vector2 swipeType = Vector2.zero;
 
-		if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
-		{
-			// the swipe is horizontal:
-			swipeType = Vector2.right * Mathf.Sign(direction.x);
+    		if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+    		{
+    			// the swipe is horizontal:
+    			swipeType = Vector2.right * Mathf.Sign(direction.x);
 
-		}
-		else
-		{
-			// the swipe is vertical:
-			swipeType = Vector2.up * Mathf.Sign(direction.y);
-		}
+    		}
+    		else
+    		{
+    			// the swipe is vertical:
+    			swipeType = Vector2.up * Mathf.Sign(direction.y);
+    		}
 
-		if(swipeType.x != 0.0f)
-		{
-			if(swipeType.x > 0.0f)
-			{
-				// MOVE RIGHT
-				OnSwipe(SwipeDirection.SwipeRight);
-				//Debug.Log ("Right");
-			}
-			else
-			{
-				// MOVE LEFT
-				OnSwipe(SwipeDirection.SwipeLeft);
-				//Debug.Log ("Left");
-			}
-		}
+    		if(swipeType.x != 0.0f)
+    		{
+    			if(swipeType.x > 0.0f)
+    			{
+    				// MOVE RIGHT
+    				OnSwipe(SwipeDirection.SwipeRight);
+    				//Debug.Log ("Right");
+    			}
+    			else
+    			{
+    				// MOVE LEFT
+    				OnSwipe(SwipeDirection.SwipeLeft);
+    				//Debug.Log ("Left");
+    			}
+    		}
 
-		if(swipeType.y != 0.0f )
-		{
-			if(swipeType.y > 0.0f)
-			{
-				// MOVE UP
-				OnSwipe(SwipeDirection.SwipeUp);
-				//Debug.Log ("Up");
-			}
-			else
-			{
-				// MOVE DOWN
-				OnSwipe(SwipeDirection.SwipeDown);
-				//Debug.Log ("Down");
-			}
+    		if(swipeType.y != 0.0f )
+    		{
+    			if(swipeType.y > 0.0f)
+    			{
+    				// MOVE UP
+    				OnSwipe(SwipeDirection.SwipeUp);
+    				//Debug.Log ("Up");
+    			}
+    			else
+    			{
+    				// MOVE DOWN
+    				OnSwipe(SwipeDirection.SwipeDown);
+    				//Debug.Log ("Down");
+    			}
 
-		}
-	}
+    		}
+    }
+	
 }
