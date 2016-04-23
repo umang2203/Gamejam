@@ -27,7 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 467192}
   - 212: {fileID: 21230660}
-  - 60: {fileID: 6087370}
+  - 61: {fileID: 6144716}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -60,31 +60,6 @@ Transform:
   - {fileID: 467192}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!60 &6087370
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122852}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -0.16500008, y: 1.2345756}
-      - {x: -0.19848478, y: 1.1941512}
-      - {x: -0.26545417, y: 0.94415104}
-      - {x: -0.27545393, y: 0.8876657}
-      - {x: -0.295, y: 0.825}
-      - {x: -0.824165, y: -1.0124551}
-      - {x: 0.8130373, y: -0.9685859}
-      - {x: 0.37692773, y: 0.67188466}
-      - {x: 0.325, y: 0.825}
-      - {x: 0.27930272, y: 0.9757541}
-      - {x: 0.24215138, y: 1.2157539}
 --- !u!61 &6138048
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -96,9 +71,23 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.023119926, y: -0.47010183}
   serializedVersion: 2
-  m_Size: {x: 0.46, y: 2.21}
+  m_Size: {x: 3.2497795, y: 3.3968143}
+--- !u!61 &6144716
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122852}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.02697194, y: 0.07860694}
+  serializedVersion: 2
+  m_Size: {x: 1.5003854, y: 2.2993977}
 --- !u!114 &11477606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8853d78e52e549fc9528eb19ec033db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsActive: 0
   LightSprite: {fileID: 0}
 --- !u!212 &21230660
 SpriteRenderer:

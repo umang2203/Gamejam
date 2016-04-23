@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour {
     public GameObject[]    itemPrefabs;
     public float[]         frequency;
     public Transform       platform;
+    public Transform       world;
     private float[]        _lastSpawnTime;
     public  float[]         _randomchance;
     private float          _size;
@@ -15,7 +16,7 @@ public class Spawner : MonoBehaviour {
 
 	void Start () 
     {
-        
+        world = this.transform;
         _lastSpawnTime = new float[itemPrefabs.Length];
         for(int i = 0; i < _lastSpawnTime.Length; i++)
             _lastSpawnTime[i] = 0f;
@@ -49,6 +50,7 @@ public class Spawner : MonoBehaviour {
                         _parallax.parallaxSpeed = 0.65f;
                         item.transform.localScale = new Vector3(2,2,1);
                         item.transform.localPosition = new Vector3(_runner.transform.localPosition.x + _size * 2,  2,item.transform.localPosition.z);
+                        world.GetComponent<World>().LampPostList.Add(item.GetComponent<LampPost>());
                     }
                     else
                     _parallax.parallaxSpeed = 0.65f;

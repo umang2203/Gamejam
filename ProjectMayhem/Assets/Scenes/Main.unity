@@ -138,6 +138,7 @@ GameObject:
   - 212: {fileID: 211858415}
   - 114: {fileID: 211858414}
   - 114: {fileID: 211858413}
+  - 114: {fileID: 211858416}
   m_Layer: 0
   m_Name: FarBuildings2
   m_TagString: Untagged
@@ -215,6 +216,17 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &211858416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 211858411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &272611448
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +235,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 272611449}
+  - 114: {fileID: 272611450}
   m_Layer: 0
   m_Name: NewBG
   m_TagString: Untagged
@@ -254,6 +267,17 @@ Transform:
   - {fileID: 1037973307}
   m_Father: {fileID: 1869377182}
   m_RootOrder: 2
+--- !u!114 &272611450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 272611448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &286617670
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +377,7 @@ GameObject:
   - 212: {fileID: 336928392}
   - 114: {fileID: 336928391}
   - 114: {fileID: 336928393}
+  - 114: {fileID: 336928394}
   m_Layer: 0
   m_Name: FarBuildings1
   m_TagString: Untagged
@@ -430,6 +455,17 @@ MonoBehaviour:
   spriteWidth: 0
   leftBG: 0
   rightBG: 0
+--- !u!114 &336928394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336928389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &364040528
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +477,7 @@ GameObject:
   - 212: {fileID: 364040531}
   - 114: {fileID: 364040530}
   - 114: {fileID: 364040532}
+  - 114: {fileID: 364040533}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -518,6 +555,17 @@ MonoBehaviour:
   spriteWidth: 0
   leftBG: 0
   rightBG: 0
+--- !u!114 &364040533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 364040528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &477797233
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +638,7 @@ GameObject:
   - 212: {fileID: 510121957}
   - 114: {fileID: 510121956}
   - 114: {fileID: 510121958}
+  - 114: {fileID: 510121959}
   m_Layer: 0
   m_Name: FogMiddle
   m_TagString: Untagged
@@ -667,6 +716,17 @@ MonoBehaviour:
   spriteWidth: 0
   leftBG: 0
   rightBG: 0
+--- !u!114 &510121959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510121954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &662872108
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +857,7 @@ GameObject:
   - 212: {fileID: 670914445}
   - 114: {fileID: 670914444}
   - 114: {fileID: 670914446}
+  - 114: {fileID: 670914447}
   m_Layer: 0
   m_Name: Fence
   m_TagString: Untagged
@@ -874,6 +935,17 @@ MonoBehaviour:
   spriteWidth: 0
   leftBG: 0
   rightBG: 0
+--- !u!114 &670914447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 670914442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &894097628
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +957,7 @@ GameObject:
   - 212: {fileID: 894097631}
   - 114: {fileID: 894097630}
   - 114: {fileID: 894097632}
+  - 114: {fileID: 894097633}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -962,6 +1035,17 @@ MonoBehaviour:
   spriteWidth: 0
   leftBG: 0
   rightBG: 0
+--- !u!114 &894097633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 894097628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &921144406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,6 +1145,7 @@ GameObject:
   - 212: {fileID: 1037973309}
   - 114: {fileID: 1037973308}
   - 114: {fileID: 1037973310}
+  - 114: {fileID: 1037973311}
   m_Layer: 0
   m_Name: FogFront
   m_TagString: Untagged
@@ -1138,6 +1223,17 @@ MonoBehaviour:
   spriteWidth: 0
   leftBG: 0
   rightBG: 0
+--- !u!114 &1037973311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1037973306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1049990663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,6 +1245,7 @@ GameObject:
   - 212: {fileID: 1049990666}
   - 114: {fileID: 1049990665}
   - 114: {fileID: 1049990667}
+  - 114: {fileID: 1049990668}
   m_Layer: 0
   m_Name: FogBackGround
   m_TagString: Untagged
@@ -1226,6 +1323,17 @@ MonoBehaviour:
   spriteWidth: 0
   leftBG: 0
   rightBG: 0
+--- !u!114 &1049990668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1049990663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1347408335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,6 +1433,7 @@ GameObject:
   - 212: {fileID: 1372555776}
   - 114: {fileID: 1372555775}
   - 114: {fileID: 1372555774}
+  - 114: {fileID: 1372555777}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -1402,6 +1511,17 @@ SpriteRenderer:
   m_Color: {r: 1, g: 0.46323532, b: 0.46323532, a: 0.822}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1372555777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372555772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1468767147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,6 +1621,7 @@ GameObject:
   - 212: {fileID: 1503216446}
   - 114: {fileID: 1503216445}
   - 114: {fileID: 1503216447}
+  - 114: {fileID: 1503216448}
   m_Layer: 0
   m_Name: CloseBUildings
   m_TagString: Untagged
@@ -1578,6 +1699,17 @@ MonoBehaviour:
   spriteWidth: 0
   leftBG: 0
   rightBG: 0
+--- !u!114 &1503216448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1503216443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1641229270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1809,7 @@ GameObject:
   - 212: {fileID: 1703929544}
   - 114: {fileID: 1703929543}
   - 114: {fileID: 1703929545}
+  - 114: {fileID: 1703929546}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Untagged
@@ -1754,6 +1887,17 @@ MonoBehaviour:
   spriteWidth: 0
   leftBG: 0
   rightBG: 0
+--- !u!114 &1703929546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1703929541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1826143007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,6 +2277,7 @@ GameObject:
   - 212: {fileID: 2004527334}
   - 114: {fileID: 2004527333}
   - 114: {fileID: 2004527335}
+  - 114: {fileID: 2004527336}
   m_Layer: 0
   m_Name: BlackBG
   m_TagString: Untagged
@@ -2210,6 +2355,17 @@ MonoBehaviour:
   spriteWidth: 0
   leftBG: 0
   rightBG: 0
+--- !u!114 &2004527336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2004527331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4cedb5524e4e7d9dbe3ffcf9d9806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2069669430
 GameObject:
   m_ObjectHideFlags: 0

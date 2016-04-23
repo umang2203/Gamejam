@@ -3,19 +3,24 @@ using System.Collections;
 using UnityEngine.EventSystems;
 public class LampPost : MonoBehaviour {
 
-    public bool IsActive;
     public GameObject LightSprite;
 	// Use this for initialization
 
     void Awake()
     {
         LightSprite = this.transform.GetChild(0).gameObject;
+        GameObject.Find("GestureRecognizer").GetComponent<InputManager>().OnPointerCall += OnPointerDown;
     }
 	void Start () 
     {
         
         LightSprite.SetActive(true);
 	}
+
+    public bool IsActive()
+    {
+        return LightSprite.activeSelf;
+    }
 
 
 	
@@ -28,13 +33,19 @@ public class LampPost : MonoBehaviour {
         if(transform.position.x < Camera.main.gameObject.transform.position.x - _screenWidth)
             GameObject.Destroy(this.gameObject);
 	
-        SpriteRenderer rendrer = new SpriteRenderer();
+       
 
 	}
 
-    void OnMouseDown()
+    void OnPointerDown(GameObject go)
     {
-        Debug.Log("Meh");
+        if(this != null)
+        {
+            if(go == this.gameObject || go == this.transform.GetChild(0).gameObject)
+            {
+                LightSprite.SetActive(false);
+            }
+        }
         
     }
 

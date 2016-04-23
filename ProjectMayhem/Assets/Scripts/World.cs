@@ -10,10 +10,12 @@ public class World : MonoBehaviour {
     private float       _size;
 
     public List<Lightning> LightningList;
+    public List<LampPost> LampPostList;
 
 	void Start () 
     {
         LightningList = new List<Lightning>();
+        LampPostList = new List<LampPost>();
         InputManager.OnSwipe += InputManager_OnSwipe;
         _cachedCarPrefab = Resources.Load("Prefabs/Car");
         _platform = transform.FindChild("Platform");
