@@ -5,10 +5,17 @@ public class World : MonoBehaviour {
 
     Runner _runner;
 
+    private Object      _cachedCarPrefab;
+    private Transform   _platform;
+    private float       _size;
+
 	void Start () 
     {
         _runner = transform.FindChild("Platform/Runner").GetComponent<Runner>();
         InputManager.OnSwipe += InputManager_OnSwipe;
+        _cachedCarPrefab = Resources.Load("Prefabs/Car");
+        _platform = transform.FindChild("Platform");
+        _size = Camera.main.orthographicSize * Screen.width / Screen.height;
 	}
 
     void OnDestroy()
@@ -24,6 +31,7 @@ public class World : MonoBehaviour {
             case SwipeDirection.SwipeDown:
                 break;
             case SwipeDirection.SwipeLeft:
+                SpawnCar();
                 break;
             case SwipeDirection.SwipeRight :
                 break;
@@ -37,4 +45,13 @@ public class World : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void SpawnCar()
+    {
+        GameObject killerCar = GameObject.Instantiate(_cachedCarPrefab) as GameObject;
+        killerCar.name =  "KillerCar";
+        killerCar.transform.SetParent(_platform,false);
+
+        killerCar.transform.localPosition = new Vector3(_runner.transform.localPosition.x + _size * 2,  _runner.transform.localPosition.y,_runner.transform.localPosition.z);
+    }
 }

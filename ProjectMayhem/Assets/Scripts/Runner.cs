@@ -18,7 +18,7 @@ public class Runner : MonoBehaviour {
 
     public float        runningSpeed = 1f;
     public float        jumpDistance = 1f;
-    Vector3     _direction;
+    Vector3             _direction;
     public float        jumpTime;
 
 	
@@ -60,7 +60,13 @@ public class Runner : MonoBehaviour {
         _animator.SetTrigger("Die");
     }
         
-
+    //Collisions
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log(collider.gameObject.name);
+        if(collider.gameObject.name == "DeathCollider")
+            Hit();
+    }
 
     //Animation Trigger callbacks
     public void OnJump_Started()
