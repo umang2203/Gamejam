@@ -32,7 +32,7 @@ GameObject:
   - 95: {fileID: 9572754}
   - 61: {fileID: 6172354}
   m_Layer: 0
-  m_Name: LighteningV1_00015
+  m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

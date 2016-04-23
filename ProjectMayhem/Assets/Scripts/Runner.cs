@@ -15,7 +15,7 @@ public enum RunnerState
 public class Runner : MonoBehaviour {
 
     Animator            _animator;
-    public RunnerState         _state;
+    public RunnerState  _state;
     private Vector3     _lastCamPos;
 
     public float            runningSpeed = 1f;
@@ -34,8 +34,7 @@ public class Runner : MonoBehaviour {
         _direction = new Vector3(1f,0,0);
        
         Run();
-	}
-	
+	}	
     void Update()
     {
         if(_state == RunnerState.Running || _state == RunnerState.Jumping)
@@ -44,7 +43,6 @@ public class Runner : MonoBehaviour {
 //            camera.transform.Translate(_direction * runningSpeed);
         }
     }
-
     public void Jump()
     {
         if(_state == RunnerState.Running)
@@ -54,20 +52,17 @@ public class Runner : MonoBehaviour {
         }
         
     }
-
     public void Run()
     {
         if(_state != RunnerState.Running)
             _animator.SetTrigger("Run");
     }
-
     public void Hit()
     { 
         if(_state == RunnerState.Jumping || _state == RunnerState.Running)
         _animator.SetTrigger("Die");
     }
        
-
     //Animation Trigger callbacks
     public void OnJump_Started()
     {
@@ -86,8 +81,7 @@ public class Runner : MonoBehaviour {
             Debug.Log("Running");
             _state = RunnerState.Running;
             _direction = new Vector3(1f,0f,0f);
-//            transform.localPosition = new Vector3(transform.localPosition.x, 0f, 0f);
-//            camera.transform.localPosition = new Vector3(camera.transform.localPosition.x, 0f, -10f);
+
         }
     }
     public void OnDieing_Started()

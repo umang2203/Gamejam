@@ -9,11 +9,12 @@ public class World : MonoBehaviour {
     private Transform   _platform;
     private float       _size;
 
-    public List<Lightning> LightningList;
+    public ManHole   activeManHole;
+    public Lightning activeLightning;
 
 	void Start () 
     {
-        LightningList = new List<Lightning>();
+        activeLightning = null;
         InputManager.OnSwipe += InputManager_OnSwipe;
         _cachedCarPrefab = Resources.Load("Prefabs/Car");
         _platform = transform.FindChild("Platform");
@@ -31,6 +32,7 @@ public class World : MonoBehaviour {
         switch (swipeDirection)
         {
             case SwipeDirection.SwipeDown:
+                RequestLightning();
                 break;
             case SwipeDirection.SwipeLeft:
                 SpawnCar();
@@ -38,8 +40,7 @@ public class World : MonoBehaviour {
             case SwipeDirection.SwipeRight :
                 break;
             case SwipeDirection.SwipeUp:
-                if(_runner != null)
-                    _runner.Jump();
+                OpenManHole();
                 break;
         }
     }
@@ -55,5 +56,24 @@ public class World : MonoBehaviour {
         killerCar.name =  "KillerCar";
         killerCar.transform.SetParent(_platform,false);
         killerCar.transform.localPosition = new Vector3(_runner.transform.localPosition.x + _size * 2,  killerCar.transform.localPosition.y,killerCar.transform.localPosition.z);
+    }
+
+    void RequestLightning()
+    {
+      
+        if(activeLightning != null)
+        {
+             Debug.Log(activeLightning.name);
+             activeLightning.Strike();
+        }
+    }
+
+    void OpenManHole()
+    {
+        if(activeManHole != null)
+        {
+            Debug.Log(activeManHole.name);
+            activeManHole.Blow();
+        }
     }
 }
