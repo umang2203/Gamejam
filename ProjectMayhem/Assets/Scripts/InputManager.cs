@@ -11,7 +11,7 @@ public enum SwipeDirection
 	SwipeRight
 };
 
-public class InputManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
+public class InputManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 
 
 
@@ -39,17 +39,17 @@ public class InputManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 
 
 
-	public void OnBeginDrag (PointerEventData eventData)
+	public void OnPointerDown (PointerEventData eventData)
 	{
-		Debug.Log ("Begin Drag");
+
 		initialPosition = eventData.position;
 
 
 	}
 
-	public void OnEndDrag (PointerEventData eventData)
+	public void OnPointerUp (PointerEventData eventData)
 	{
-		Debug.Log ("End Drag");
+
 		finalPosition = eventData.position;
 
 		Vector2 direction = finalPosition - initialPosition;
