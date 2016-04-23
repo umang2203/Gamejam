@@ -7,11 +7,11 @@ public class HUDHandler : MonoBehaviour
 
 	float timer = 10f;
 	Text timertext;
-	GameObject obstacleCar;
+//	GameObject obstacleCar;
 	// Use this for initialization
 	void Start () 
 	{
-		obstacleCar = GameObject.FindGameObjectWithTag ("Obstacle");
+//		obstacleCar = GameObject.FindGameObjectWithTag ("Obstacle");
 		//Debug.Log (obstacleCar.name);
 		timertext = GameObject.Find("Timer").GetComponent<Text> ();
 
@@ -31,13 +31,13 @@ public class HUDHandler : MonoBehaviour
 
 	}
 
-	void OnCollisionEnter2D(Collision2D coll) 
-	{
-		Debug.Log ("aaaaaaa");
-		if (coll.gameObject.tag == "Obstacle") 
-		{
-			Debug.Log ("dsgerga");
-		}
-
-	}
+//	void OnCollisionEnter2D(Collision2D coll) 
+//	{
+//		Debug.Log ("aaaaaaa");
+//		if (coll.gameObject.tag == "Obstacle") 
+//		{
+//			Debug.Log ("dsgerga");
+//		}
+//
+//	}
 }
