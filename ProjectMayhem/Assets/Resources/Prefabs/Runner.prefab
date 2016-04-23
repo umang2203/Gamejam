@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa0725f8767d4fd0996fb220eff4004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countText: {fileID: 0}
   _state: 0
   runningSpeed: 0.18
   jumpDistance: 2.5

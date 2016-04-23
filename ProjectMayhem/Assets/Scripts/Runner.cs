@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public enum RunnerState
 {
@@ -13,8 +14,10 @@ public enum RunnerState
 
 public class Runner : MonoBehaviour {
 
+
+
     Animator            _animator;
-    public RunnerState         _state;
+    public RunnerState  _state;
     private Vector3     _lastCamPos;
 
     public float        runningSpeed = 1f;
@@ -27,6 +30,7 @@ public class Runner : MonoBehaviour {
 	
 	void Start () 
     {
+		
         _state = RunnerState.Idel;
         _animator = GetComponent<Animator>();
         _direction = new Vector3(1f,0,0);

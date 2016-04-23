@@ -7,37 +7,30 @@ public class HUDHandler : MonoBehaviour
 
 	float timer = 10f;
 	Text timertext;
-//	GameObject obstacleCar;
-	// Use this for initialization
+
+	public Image circularSilder;            //Drag the circular image i.e Slider in our case
+	public float StartTime;  
+
+	private	int _count = 0;
+	private Text countText;  				//In how much time the progress bar will fill/empty
+
+
 	void Start () 
 	{
-//		obstacleCar = GameObject.FindGameObjectWithTag ("Obstacle");
-		//Debug.Log (obstacleCar.name);
-		timertext = GameObject.Find("Timer").GetComponent<Text> ();
+		
+		countText = GameObject.Find("Count").GetComponent<Text> ();
+		_count = 0;
+		countText.text = _count.ToString();
+
+		circularSilder.fillAmount=1f; 
+		StartTime = Time.time;
 
 	}
 	
-	// Update is called once per frame
+
 	void Update () 
 	{
-		timer -= Time.deltaTime;
-		timertext.text = timer.ToString();
 
-		if (timer < 0) 
-		{
-			//Time.timeScale = 0;
-			print ("GAME OVER!!!");
-		}
-
+		circularSilder.fillAmount = 1 - (Time.time - StartTime )/ timer;   
 	}
-
-//	void OnCollisionEnter2D(Collision2D coll) 
-//	{
-//		Debug.Log ("aaaaaaa");
-//		if (coll.gameObject.tag == "Obstacle") 
-//		{
-//			Debug.Log ("dsgerga");
-//		}
-//
-//	}
 }
