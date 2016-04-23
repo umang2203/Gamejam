@@ -11,6 +11,9 @@ public class KillerCar : MonoBehaviour {
 	void Update () 
     {
         transform.Translate(Vector3.left * speed);
+        float _screenWidth = Camera.main.orthographicSize * Screen.width / Screen.height;
+        if(transform.position.x < Camera.main.gameObject.transform.position.x - _screenWidth)
+            GameObject.Destroy(this.gameObject);
 	}
 
    
