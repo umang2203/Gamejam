@@ -12,4 +12,11 @@ public class Interactables : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void OnGesture()
+    {
+        
+    }
+
+
 }

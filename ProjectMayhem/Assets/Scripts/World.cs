@@ -3,7 +3,7 @@ using System.Collections;
 
 public class World : MonoBehaviour {
 
-    Runner _runner;
+    public Runner _runner;
 
     private Object      _cachedCarPrefab;
     private Transform   _platform;
@@ -11,7 +11,7 @@ public class World : MonoBehaviour {
 
 	void Start () 
     {
-        _runner = transform.FindChild("Platform/Runner").GetComponent<Runner>();
+//        _runner = transform.FindChild("Platform/Runner").GetComponent<Runner>();
         InputManager.OnSwipe += InputManager_OnSwipe;
         _cachedCarPrefab = Resources.Load("Prefabs/Car");
         _platform = transform.FindChild("Platform");
@@ -36,7 +36,8 @@ public class World : MonoBehaviour {
             case SwipeDirection.SwipeRight :
                 break;
             case SwipeDirection.SwipeUp:
-                _runner.Jump();
+                if(_runner != null)
+                    _runner.Jump();
                 break;
         }
     }

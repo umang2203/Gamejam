@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-enum RunnerState
+public enum RunnerState
 {
     Running,
     Jumping,
@@ -13,13 +14,15 @@ enum RunnerState
 public class Runner : MonoBehaviour {
 
     Animator            _animator;
-    RunnerState         _state;
+    public RunnerState         _state;
     private Vector3     _lastCamPos;
 
     public float        runningSpeed = 1f;
     public float        jumpDistance = 1f;
     Vector3             _direction;
     public float        jumpTime;
+
+    public event Action<GameObject> OnRunnerDead;
 
 	
 	void Start () 
@@ -105,6 +108,8 @@ public class Runner : MonoBehaviour {
         {
             Debug.Log("Dead");
             _state = RunnerState.Dead;
+            if(OnRunnerDead != null)
+                OnRunnerDead(this.gameObject);
         }
     }
 
