@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class World : MonoBehaviour {
 
@@ -9,9 +9,11 @@ public class World : MonoBehaviour {
     private Transform   _platform;
     private float       _size;
 
+    public List<Lightning> LightningList;
+
 	void Start () 
     {
-//        _runner = transform.FindChild("Platform/Runner").GetComponent<Runner>();
+        LightningList = new List<Lightning>();
         InputManager.OnSwipe += InputManager_OnSwipe;
         _cachedCarPrefab = Resources.Load("Prefabs/Car");
         _platform = transform.FindChild("Platform");
