@@ -60,16 +60,11 @@ public class Runner : MonoBehaviour {
 
     public void Hit()
     { 
+        if(_state == RunnerState.Jumping || _state == RunnerState.Running)
         _animator.SetTrigger("Die");
     }
         
-    //Collisions
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        Debug.Log(collider.gameObject.name);
-        if(collider.gameObject.name == "DeathCollider")
-            Hit();
-    }
+   
 
     //Animation Trigger callbacks
     public void OnJump_Started()
@@ -141,6 +136,7 @@ public class Runner : MonoBehaviour {
             yield return null;
         }
 
+        transform.localPosition = new Vector3(transform.localPosition.x, 0f, 0f);
         _animator.SetTrigger("End");
 
 
