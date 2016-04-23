@@ -12,6 +12,7 @@ public class CharacterSpawner : MonoBehaviour {
     {
         runnerGO = Instantiate(Runner);
         runnerGO.transform.SetParent(this.transform, false);
+        runnerGO.name = "Runner";
         runnerGO.GetComponent<Runner>().OnRunnerDead += OnRunnerDead;
         mainCam.GetComponent<Camera2DFollow>().target = runnerGO.transform;
         world.GetComponent<World>()._runner = runnerGO.GetComponent<Runner>();
@@ -28,6 +29,7 @@ public class CharacterSpawner : MonoBehaviour {
 
         runnerGO = Instantiate(Runner,pos,Runner.transform.localRotation) as GameObject;
         runnerGO.transform.SetParent(this.transform, false);
+        runnerGO.name = "Runner";
         runnerGO.GetComponent<Runner>().OnRunnerDead += OnRunnerDead;
         mainCam.GetComponent<Camera2DFollow>().target = runnerGO.transform;
         world.GetComponent<World>()._runner = runnerGO.GetComponent<Runner>();
