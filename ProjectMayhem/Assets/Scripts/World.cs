@@ -3,11 +3,11 @@ using System.Collections;
 
 public class World : MonoBehaviour {
 
-    Runner _runner;
+    public Runner _runner;
 
 	void Start () 
     {
-        _runner = transform.FindChild("Platform/Runner").GetComponent<Runner>();
+//        _runner = transform.FindChild("Platform/Runner").GetComponent<Runner>();
         InputManager.OnSwipe += InputManager_OnSwipe;
 	}
 
@@ -28,7 +28,8 @@ public class World : MonoBehaviour {
             case SwipeDirection.SwipeRight :
                 break;
             case SwipeDirection.SwipeUp:
-                _runner.Jump();
+                if(_runner != null)
+                    _runner.Jump();
                 break;
         }
     }
