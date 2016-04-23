@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Interactables : MonoBehaviour {
+public class AI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,11 +12,4 @@ public class Interactables : MonoBehaviour {
 	void Update () {
 	
 	}
-
-    public void OnGesture()
-    {
-        
-    }
-
-
 }

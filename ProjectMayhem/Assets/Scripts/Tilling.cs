@@ -63,7 +63,7 @@ public class Tilling : MonoBehaviour {
         }
 
         if(Side > 0)
-            Destroy(this.transform.gameObject,6);
+            Destroy(this.transform.gameObject,12);
         
     }
 }
