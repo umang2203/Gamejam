@@ -17,7 +17,6 @@ public class InputManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
 
 	Vector2 initialPosition;
 	Vector2 finalPosition;
-	private GameObject _object;
 
 	public delegate void Swipe(SwipeDirection swipeDirection); 
 	public static event Swipe OnSwipe;
@@ -26,8 +25,6 @@ public class InputManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
 	// Use this for initialization
 	void Start ()
 	{	
-		//SwipeDirection swipeDirection;
-		_object = GameObject.Find ("Image");
 
 
 	}

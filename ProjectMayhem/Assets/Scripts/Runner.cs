@@ -17,11 +17,10 @@ public class Runner : MonoBehaviour {
     private Vector3     _lastCamPos;
 
     public float        runningSpeed = 1f;
-    public float        jumpDistance = 10f;
+    public float        jumpDistance = 1f;
     Vector3     _direction;
     public float        jumpTime;
 
-    public GameObject camera;
 	
 	void Start () 
     {
@@ -109,6 +108,7 @@ public class Runner : MonoBehaviour {
 
         float NormalizeTime;
         Vector3 startPos = this.transform.localPosition;
+        Vector3 targetPos = startPos + new Vector3(7.5f,jumpDistance,0);
         Debug.Log(startPos);
         bool Jumping = true;
         while(Jumping)
@@ -118,20 +118,17 @@ public class Runner : MonoBehaviour {
 
             if(NormalizeTime < 0.5f)
             {
-                
-                transform.localPosition = Vector3.Lerp(startPos,startPos + new Vector3(5,jumpDistance,0),NormalizeTime*2);
+                transform.localPosition = Vector3.Lerp(startPos,targetPos,NormalizeTime*2);
             }
             else
             {
-                transform.localPosition = Vector3.Lerp(startPos + new Vector3(5f,jumpDistance,0),startPos + new Vector3(10f,0,0), ((NormalizeTime*2) -1));
-                Debug.Log(transform.localPosition);
+                transform.localPosition = Vector3.Lerp(startPos + new Vector3(7.5f,jumpDistance,0),startPos + new Vector3(15f,0,0), ((NormalizeTime*2) -1));
             }
 
             if(NormalizeTime >=  1)
                 Jumping = false;
 
             yield return null;
-//            Jumping = false;
         }
 
         _animator.SetTrigger("End");
