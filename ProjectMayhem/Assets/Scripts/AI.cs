@@ -31,12 +31,18 @@ public class AI  : MonoBehaviour
                     _runner.Jump();
                 break;
             case "CarDeath":
-                if(IsUnderLight())
+                if(!IsUnderLight())
+                {
+                    GameObject.Destroy(collider.gameObject);
                     _runner.Hit();
+                }
                 break;
-            case "ManHolde_Death":
-                if(IsUnderLight())
+            case "ManHole_Death":
+                if(!IsUnderLight())
+                {
+                    GameObject.Destroy(collider.gameObject);
                     _runner.Hit();
+                }
                 break;
         }
     }

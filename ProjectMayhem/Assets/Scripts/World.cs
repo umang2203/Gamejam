@@ -52,6 +52,6 @@ public class World : MonoBehaviour {
         GameObject killerCar = GameObject.Instantiate(_cachedCarPrefab) as GameObject;
         killerCar.name =  "KillerCar";
         killerCar.transform.SetParent(_platform,false);
-        killerCar.transform.localPosition = new Vector3(_runner.transform.localPosition.x + _size * 2,  _runner.transform.localPosition.y,_runner.transform.localPosition.z);
+        killerCar.transform.localPosition = new Vector3(_runner.transform.localPosition.x + _size * 2,  killerCar.transform.localPosition.y,killerCar.transform.localPosition.z);
     }
 }
