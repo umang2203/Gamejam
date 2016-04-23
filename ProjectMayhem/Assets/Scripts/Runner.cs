@@ -120,7 +120,6 @@ public class Runner : MonoBehaviour {
         float NormalizeTime;
         Vector3 startPos = this.transform.localPosition;
         Vector3 targetPos = startPos + new Vector3(7.5f,jumpDistance,0);
-        Debug.Log(startPos);
         bool Jumping = true;
         while(Jumping)
         {
