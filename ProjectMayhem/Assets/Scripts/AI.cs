@@ -13,7 +13,7 @@ public class AI  : MonoBehaviour
     //Collisions
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log(collider.gameObject.name);
+        
         if(collider.gameObject.name == "KillerCar" && IsUnderLight())
             _runner.Jump();
         else
@@ -31,12 +31,24 @@ public class AI  : MonoBehaviour
                     _runner.Jump();
                 break;
             case "CarDeath":
-                if(IsUnderLight())
+                if(!IsUnderLight())
+                {
+                    GameObject.Destroy(collider.gameObject);
                     _runner.Hit();
+                }
                 break;
-            case "ManHolde_Death":
-                if(IsUnderLight())
+            case "ManHole_Death":
+                if(!IsUnderLight())
+                {
+                    GameObject.Destroy(collider.gameObject);
                     _runner.Hit();
+                }
+                break;
+            case "Bolt":
+                {
+                   _runner.Hit();
+                    collider.gameObject.SetActive(false);
+                }
                 break;
         }
     }

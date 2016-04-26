@@ -8,12 +8,11 @@ public class CharacterSpawner : MonoBehaviour {
     public Camera mainCam;
     public GameObject world;
     GameObject runnerGO;
-	public Text Count;
-	int DeadCount;
+    public Text textCount;
+    public int DeadCount;
 
     void Start()
     {
-		DeadCount = 0;
         runnerGO = Instantiate(Runner);
         runnerGO.transform.SetParent(this.transform, false);
         runnerGO.name = "Runner";
@@ -30,8 +29,6 @@ public class CharacterSpawner : MonoBehaviour {
         
         Vector3 pos = go.transform.localPosition - new Vector3(10,0,0);
         Destroy(go);
-		DeadCount++;
-		Count.text = DeadCount.ToString ();
 
         runnerGO = Instantiate(Runner,pos,Runner.transform.localRotation) as GameObject;
         runnerGO.transform.SetParent(this.transform, false);

@@ -17,7 +17,10 @@ public class Tilling : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
+        if(GetComponent<SpriteRenderer>() != null)
         spriteWidth = GetComponent<SpriteRenderer>().bounds.size.x;
+        if(spriteWidth == 0)
+            spriteWidth = 35;
 	}
 	
 	// Update is called once per frame
