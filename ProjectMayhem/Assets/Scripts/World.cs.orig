@@ -9,13 +9,22 @@ public class World : MonoBehaviour {
     private Transform   _platform;
     private float       _size;
 
+<<<<<<< HEAD
     public ManHole   activeManHole;
     public Lightning activeLightning;
-    public List<LampPost>   LampPostList;
+
 	void Start () 
     {
         activeLightning = null;
+=======
+    public List<Lightning> LightningList;
+    public List<LampPost> LampPostList;
+
+	void Start () 
+    {
+        LightningList = new List<Lightning>();
         LampPostList = new List<LampPost>();
+>>>>>>> 60b58c1db2263ccfba38ca5526e2200049419eab
         InputManager.OnSwipe += InputManager_OnSwipe;
         _cachedCarPrefab = Resources.Load("Prefabs/Car");
         _platform = transform.FindChild("Platform");

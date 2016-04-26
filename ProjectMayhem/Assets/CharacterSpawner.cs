@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CharacterSpawner : MonoBehaviour {
 
@@ -7,6 +8,8 @@ public class CharacterSpawner : MonoBehaviour {
     public Camera mainCam;
     public GameObject world;
     GameObject runnerGO;
+    public Text textCount;
+    public int DeadCount;
 
     void Start()
     {
